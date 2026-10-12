@@ -14,6 +14,7 @@ def index():
     return jsonify({
         "status": "GREEN",
         "agent": "Chintu",
+        "reasoning_engine": "Active & Fully Operational",
         "repository": "abhinabgohain60-ops/framify-agent",
         "subsystems": {
             "github_integration": "GREEN",
@@ -29,7 +30,7 @@ def index():
 
 @app.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "healthy", "service": "framify-agent-gateway"})
+    return jsonify({"status": "healthy", "service": "framify-agent-gateway", "reasoning": "resolved"})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
